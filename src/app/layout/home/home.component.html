@@ -1,0 +1,31 @@
+<div fxLayout="column" fxLayoutGap="20px">
+  <div fxLayout fxLayoutGap="20px" fxLayoutAlign="flex-start">
+    <button mat-raised-button fxFlex="50" class="btn-home" [routerLink]="['/boleiro', partidaId]">
+      <!-- <mat-icon>person_add_alt</mat-icon> -->
+      <img src="/assets/team-add.svg" width="45px">
+      <br>
+      <span>BOLEIROS</span>
+    </button>
+    <button mat-raised-button fxFlex="50" class="btn-home" [routerLink]="['/team', partidaId]">
+      <!-- <mat-icon>rule</mat-icon> -->
+      <img src="/assets/take-out-team.svg" width="45px">
+      <br>
+      <span>TIRAR TIME</span>
+    </button>
+  </div>
+
+  <div fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout fxLayoutGap="20px" fxLayoutAlign="flex-start">
+      <button mat-raised-button fxFlex="50" class="btn-home" [routerLink]="['/boleiro', partidaId]">
+        <!-- <mat-icon>format_list_numbered</mat-icon> -->
+        <img src="/assets/take-out-team-one.svg" width="45px">
+        <br>
+        <span>TIRAR UM A UM</span>
+      </button>
+      <button mat-raised-button fxFlex="50" class="btn-home" [routerLink]="['/cronometro', partidaId]">
+        <!-- <mat-icon>timer</mat-icon> -->
+        <img src="/assets/chronometer.svg" width="45px">
+        <br>
+        <span>CRONÔMETRO</span>
+      </button>
+    </div>

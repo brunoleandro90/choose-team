@@ -1,0 +1,18 @@
+<mat-form-field>
+  <input autocomplete="off" [(ngModel)]="totalTime" (change)="setTimeLeft()" matInput placeholder="Tempo do jogo">
+</mat-form-field>
+
+<br>
+
+<div class="box">
+  <mat-progress-spinner color="primary" mode="determinate" [value]="value" diameter=200></mat-progress-spinner>
+  <div class="div2">
+    <span>{{time|date:'mm:ss'}}</span>
+    <button mat-icon-button (click)='playTimer()'>
+      <mat-icon>not_started</mat-icon>
+    </button>
+    <button mat-icon-button (click)='pauseTimer()'>
+      <mat-icon>pause_circle_outline</mat-icon>
+    </button>
+  </div>
+</div>

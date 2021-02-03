@@ -1,0 +1,43 @@
+<div fxLayout="column" fxLayoutGap="20px">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="50">
+      JOGADORES POR TIME:
+    </div>
+    <div fxFlex="17">
+      <button mat-button type="button" style="min-width: 50px;" (click)="incrementQuantityPerTeam(false)">
+        <mat-icon>remove_circle_outline</mat-icon>
+      </button>
+    </div>
+    <div fxFlex="16">
+      <button mat-button type="button" style="min-width: 50px;">
+        {{teamService.quantityPerTeam}}
+      </button>
+    </div>
+    <div fxFlex="17">
+      <button mat-button type="button" style="min-width: 50px;" (click)="incrementQuantityPerTeam(true)">
+        <mat-icon>add_circle_outline</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div fxLayout="column">
+    <button mat-raised-button color="primary" type="submit" (click)="tirarTime()">TIRAR TIME</button>
+  </div>
+
+  <div fxLayout="row wrap">
+    <div fxFlex fxLayoutAlign="center">
+      <button mat-button type="button" (click)="getTeam(0)">
+        <img src="/assets/team-uniform.svg" width="30px">
+        <br>
+        TODOS
+      </button>
+    </div>
+
+    <div fxFlex fxLayoutAlign="center" *ngFor="let item of teamService.teams, let i = index">
+      <button mat-button type="button" (click)="getTeam(i + 1)">
+        <img src="/assets/team-uniform.svg" width="30px">
+        <br>
+        TIME {{i + 1}}
+      </button>
+    </div>
+  </div>
+</div>

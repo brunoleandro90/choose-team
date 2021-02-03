@@ -1,0 +1,21 @@
+<app-create-team></app-create-team>
+
+<br>
+
+<div fxLayout="row">
+  <div class="title-boleiro" fxFlex>
+    SELECIONE OS BOLEIROS ({{boleiroService.getActive().length}})
+  </div>
+</div>
+
+<div fxLayout="row" class="list-boleiro" *ngFor=" let item of boleiroService.boleiros; let i = index">
+  <div fxFlex="60">
+    {{item.nome}}
+  </div>
+  <div fxFlex="25">
+    {{item.posicao}}
+  </div>
+  <div fxFlex="15">
+    <mat-slide-toggle color="primary" [checked]="item.ativo" (change)="boleiroService.setActive(item)"></mat-slide-toggle>
+  </div>
+</div>

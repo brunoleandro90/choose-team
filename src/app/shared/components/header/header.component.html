@@ -1,0 +1,6 @@
+<mat-toolbar color="primary" class="header">
+  <button mat-icon-button type="button" (click)="toBack()" [ngStyle]="{display: showBack() ? 'block' : 'none'}">
+    <mat-icon>navigate_before</mat-icon>
+  </button>
+  <span>{{title}}</span>
+</mat-toolbar>
