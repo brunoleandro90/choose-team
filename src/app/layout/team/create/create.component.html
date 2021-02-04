@@ -23,7 +23,11 @@
     <button mat-raised-button color="primary" type="submit" (click)="tirarTime()">TIRAR TIME</button>
   </div>
 
-  <div fxLayout="row wrap">
+
+  <div fxLayout="row wrap" style="padding: 10px 0; border: 0.2px solid rgba(0, 0, 0, .3); border-width: 1px 0;">
+    <div fxFlex="100">
+      Últimos times:
+    </div>
     <div fxFlex fxLayoutAlign="center">
       <button mat-button type="button" (click)="getTeam(0)">
         <img src="/assets/team-uniform.svg" width="30px">

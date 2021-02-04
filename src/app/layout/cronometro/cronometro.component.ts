@@ -11,7 +11,7 @@ export class CronometroComponent implements OnInit {
   totalTime: number = 7;
 
   interval: any;
-  value = 0;
+  value = 50;
 
   constructor() { }
 

@@ -1,17 +1,22 @@
-<div fxLayout="column" class="title-boleiro">
-  BOLEIROS ({{boleiroService.boleiros.length}})
+<div fxLayout="column" fxLayoutAlign="center center" *ngIf="boleiroService.boleiros.length == 0">
+  NENHUM BOLEIRO CADASTRADO!
 </div>
-<div fxLayout="row" class="list-boleiro" *ngFor=" let item of boleiroService.boleiros; let i = index">
-  <div fxFlex="60">
-    {{item.nome}}
+
+<div *ngIf="boleiroService.boleiros.length > 0">
+  <div fxLayout="column" class="title-boleiro">
+    BOLEIROS ({{boleiroService.boleiros.length}})
   </div>
-  <div fxFlex="25">
-    {{item.posicao}}
-  </div>
-  <div fxFlex="15">
-    <button mat-icon-button color="warn" (click)="delete(item.id)" matTooltip="EXCLUIR" matTooltipPosition="left">
-      <!-- <mat-icon class="mat-18">close</mat-icon> -->
-      <img src="/assets/close.svg" width="24px">
-    </button>
+  <div fxLayout="row" class="list-boleiro" *ngFor=" let item of boleiroService.boleiros; let i = index">
+    <div fxFlex="60">
+      {{item.nome}}
+    </div>
+    <div fxFlex="25">
+      {{item.posicao}}
+    </div>
+    <div fxFlex="15">
+      <button mat-icon-button color="warn" (click)="delete(item.id)" matTooltip="EXCLUIR" matTooltipPosition="left">
+        <img src="/assets/close.svg" width="24px">
+      </button>
+    </div>
   </div>
 </div>

@@ -2,7 +2,7 @@
   <form (ngSubmit)="save()" [formGroup]="boleiroForm">
     <div fxLayout fxLayoutGap="10px">
       <mat-form-field fxFlex="70">
-        <input matInput autocomplete="off" #NomeBoleiro="matInput" type="text" formControlName="nome"
+        <input matInput autocomplete="off" #NomeBoleiro="matInput" type="text" oninput="this.value = this.value.toUpperCase()" formControlName="nome"
           placeholder="NOME">
       </mat-form-field>
       <mat-form-field fxFlex="30">

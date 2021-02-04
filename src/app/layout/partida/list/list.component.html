@@ -1,16 +1,23 @@
-<mat-card fxLayout="column" class="card-partida" [routerLink]="['/home', partida.id]" *ngFor="let partida of partidas">
-  <mat-card-content fxLayout="row" fxLayoutAlign="center center">
-    <div style="font-size: 18px;" fxFlex="85">
-      {{partida.descricao}}
-    </div>
-    <div fxFlex="15">
-      <button mat-icon-button color="warn" (click)="delete(partida.id)" matTooltip="EXCLUIR" matTooltipPosition="left">
-        <!-- <mat-icon>delete</mat-icon> -->
-      <img src="/assets/close.svg" width="24px">
-      </button>
-    </div>
-  </mat-card-content>
-</mat-card>
+<div fxLayout="column" fxLayoutAlign="center center" *ngIf="partidas.length == 0">
+  NENHUMA PELADA CADASTRADA!
+</div>
+
+<div *ngIf="partidas.length > 0">
+  <mat-card fxLayout="column" class="card-partida" [routerLink]="['/home', partida.id]"
+    *ngFor="let partida of partidas">
+    <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+      <div style="font-size: 18px;" fxFlex="85">
+        {{partida.descricao}}
+      </div>
+      <div fxFlex="15" style="text-align: right;">
+        <button mat-icon-button color="warn" (click)="delete(partida.id)" matTooltip="EXCLUIR"
+          matTooltipPosition="left">
+          <img src="/assets/close.svg" width="24px">
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
 
 <div class="fab">
   <button mat-fab (click)="openAdd()" color="primary" matTooltip="ADICIONAR" matTooltipPosition="left">

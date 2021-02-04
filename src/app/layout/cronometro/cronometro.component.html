@@ -5,7 +5,17 @@
 <br>
 
 <div class="box">
-  <mat-progress-spinner color="primary" mode="determinate" [value]="value" diameter=200></mat-progress-spinner>
+  <mat-progress-spinner color="warn" class="chronometer" mode="determinate" value="100" diameter=200>
+  </mat-progress-spinner>
+  <mat-progress-spinner color="primary" class="chronometer" mode="determinate" [value]="value" diameter=200>
+  </mat-progress-spinner>
+
+</div>
+<!-- <div class="box">
+  <mat-progress-spinner color="warn" mode="determinate" value="100" diameter=200>
+  </mat-progress-spinner>
+  <mat-progress-spinner color="primary" mode="determinate" [value]="value" diameter=200>
+  </mat-progress-spinner>
   <div class="div2">
     <span>{{time|date:'mm:ss'}}</span>
     <button mat-icon-button (click)='playTimer()'>
@@ -15,4 +25,4 @@
       <mat-icon>pause_circle_outline</mat-icon>
     </button>
   </div>
-</div>
+</div> -->

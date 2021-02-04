@@ -27,7 +27,9 @@ export class ListComponent implements OnInit {
   }
 
   openAdd() {
-    const dialogRef = this.dialog.open(CreateComponent);
+    const dialogRef = this.dialog.open(CreateComponent, {
+      height: "200px"
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {

@@ -27,7 +27,6 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
     this.teamService.getByPartida(this.partidaId)
       .subscribe(res => {
-        debugger;
         this.teamService.teams = res as Team[];
         if (this.teamService.teams.length == 0) {
           this.setTeams();
@@ -36,6 +35,8 @@ export class CreateComponent implements OnInit {
   }
 
   tirarTime() {
+    this.setTeams();
+    
     let boleirosActives = this.shuffle(this.boleiroService.getActive());
 
     for (let indexTeam = 0; indexTeam < this.teamService.teams.length; indexTeam++) {
@@ -99,7 +100,6 @@ export class CreateComponent implements OnInit {
   }
 
   setTeams() {
-    debugger;
     let qtde = Math.ceil(this.boleiroService.getActive().length / this.teamService.quantityPerTeam);
     this.teamService.teams = new Array<Team>(qtde);
   }
