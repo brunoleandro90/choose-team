@@ -7,12 +7,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  partidaId: string = '';
+  matchId: string = '';
 
   constructor(
     private route: ActivatedRoute,
   ) { 
-    this.partidaId = this.route.snapshot.params.partidaid;
+    this.matchId = this.route.snapshot.params.matchid;
   }
 
   ngOnInit(): void {

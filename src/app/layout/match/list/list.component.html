@@ -1,16 +1,16 @@
-<div fxLayout="column" fxLayoutAlign="center center" *ngIf="partidas.length == 0">
-  NENHUMA PELADA CADASTRADA!
+<div fxLayout="column" fxLayoutAlign="center center" *ngIf="matchs.length == 0">
+  NENHUMA PARTIDA CADASTRADA!
 </div>
 
-<div *ngIf="partidas.length > 0">
-  <mat-card fxLayout="column" class="card-partida" [routerLink]="['/home', partida.id]"
-    *ngFor="let partida of partidas">
+<div *ngIf="matchs.length > 0">
+  <mat-card fxLayout="column" class="card-match" [routerLink]="['/home', match.id]"
+    *ngFor="let match of matchs">
     <mat-card-content fxLayout="row" fxLayoutAlign="center center">
       <div style="font-size: 18px;" fxFlex="85">
-        {{partida.descricao}}
+        {{match.name}}
       </div>
       <div fxFlex="15" style="text-align: right;">
-        <button mat-icon-button color="warn" (click)="delete(partida.id)" matTooltip="EXCLUIR"
+        <button mat-icon-button color="warn" (click)="delete(match.id)" matTooltip="EXCLUIR"
           matTooltipPosition="left">
           <img src="/assets/close.svg" width="24px">
         </button>

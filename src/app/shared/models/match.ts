@@ -1,6 +1,6 @@
 import { Guid } from "guid-typescript";
 
-export interface Partida {
+export interface Match {
   id: string;
-  descricao: string;
+  name: string;
 }

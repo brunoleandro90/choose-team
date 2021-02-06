@@ -11,32 +11,32 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'partida',
+        redirectTo: 'match',
         pathMatch: 'full'
       },
       {
-        path: 'partida',
-        loadChildren: () => import('./partida/partida.module').then(m => m.PartidaModule)
+        path: 'match',
+        loadChildren: () => import('./match/match.module').then(m => m.MatchModule)
       },
       {
-        path: 'home/:partidaid',
+        path: 'home/:matchid',
         component: HomeComponent
       },
       {
-        path: 'boleiro/:partidaid',
-        loadChildren: () => import('./boleiro/boleiro.module').then(m => m.BoleiroModule)
+        path: 'player/:matchid',
+        loadChildren: () => import('./player/player.module').then(m => m.PlayerModule)
       },
       {
-        path: 'team/:partidaid',
+        path: 'team/:matchid',
         loadChildren: () => import('./team/team.module').then(m => m.TeamModule)
       },
       {
-        path: 'cronometro/:partidaid',
+        path: 'cronometro/:matchid',
         component: CronometroComponent
       },
       {
         path: '**',
-        redirectTo: 'partida'
+        redirectTo: 'match'
       }
     ]
   }

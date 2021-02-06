@@ -1,9 +1,9 @@
 <h3 mat-dialog-title>PARTIDA</h3>
 
 <mat-dialog-content class="mat-typography">
-  <form (ngSubmit)="save()" [formGroup]="partidaForm" fxFlex>
+  <form (ngSubmit)="save()" [formGroup]="matchForm" fxFlex>
     <mat-form-field>
-      <input matInput autocomplete="off" formControlName="descricao" oninput="this.value = this.value.toUpperCase()" placeholder="DESCRIÇÃO">
+      <input matInput autocomplete="off" formControlName="name" oninput="this.value = this.value.toUpperCase()" placeholder="DESCRIÇÃO">
     </mat-form-field>
   </form>
 </mat-dialog-content>

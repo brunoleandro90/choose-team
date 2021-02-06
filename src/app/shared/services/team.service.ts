@@ -20,14 +20,14 @@ export class TeamService {
 
   constructor() { }
 
-  getByPartida(partidaId: string): Observable<Team[]> {
+  getByMatch(matchId: string): Observable<Team[]> {
     let teams = this.LocalStorage.get(this.origem) as Team[] ?? [];
-    return of(teams.filter(x => x.partidaId == partidaId));
+    return of(teams.filter(x => x.matchId == matchId));
   }
 
   create(teams: Team[]): Observable<Team[]> {
     let teamsDB = this.LocalStorage.get(this.origem) as Team[] ?? [];
-    teamsDB = teamsDB.filter(x => x.partidaId != teams[0].partidaId);
+    teamsDB = teamsDB.filter(x => x.matchId != teams[0].matchId);
     for (let index = 0; index < teams.length; index++) {
       teamsDB.push(teams[index]);
     }
@@ -36,9 +36,9 @@ export class TeamService {
     return of(teams);
   }
 
-  remove(partidaId: string) {
+  remove(matchId: string) {
     let teamsDB = this.LocalStorage.get(this.origem) as Team[] ?? [];
-    teamsDB = teamsDB.filter(x => x.partidaId != partidaId);
+    teamsDB = teamsDB.filter(x => x.matchId != matchId);
     this.LocalStorage.remove(this.origem)
     this.LocalStorage.create(this.origem, teamsDB);
     return of(true);

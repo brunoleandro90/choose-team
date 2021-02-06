@@ -1,42 +1,42 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { Partida } from 'src/app/shared/models/partida';
-import { PartidaService } from 'src/app/shared/services/partida.service';
+import { Match } from 'src/app/shared/models/match';
+import { MatchService } from 'src/app/shared/services/match.service';
 import { SnackBarService } from 'src/app/shared/services/snack-bar.service';
 
 @Component({
-  selector: 'app-create-partida',
+  selector: 'app-create-match',
   templateUrl: './create.component.html'
 })
 export class CreateComponent implements OnInit {
 
-  partida!: Partida;
+  match!: Match;
 
-  partidaForm!: FormGroup;
+  matchForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private partidaService: PartidaService,
+    private matchService: MatchService,
     private snackBarService: SnackBarService,
     public dialogRef: MatDialogRef<CreateComponent>,
   ) { }
 
   ngOnInit(): void {
-    this.partidaForm = this.fb.group({
-      descricao: ['', [Validators.required]]
+    this.matchForm = this.fb.group({
+      name: ['', [Validators.required]]
     });
   }
 
   save() {
-    if (this.partidaForm.dirty && this.partidaForm.valid) {
-      this.partida = Object.assign({}, this.partida, this.partidaForm.value);
+    if (this.matchForm.dirty && this.matchForm.valid) {
+      this.match = Object.assign({}, this.match, this.matchForm.value);
 
-      this.partidaService.create(this.partida)
+      this.matchService.create(this.match)
         .subscribe(
           success => {
-            this.snackBarService.success('Partida cadastrada com sucesso!', '');
-            this.dialogRef.close(this.partida);
+            this.snackBarService.success('Match cadastrada com sucesso!', '');
+            this.dialogRef.close(this.match);
           },
           fail => {
             this.snackBarService.error('Ops, ocorreu erro!', '');

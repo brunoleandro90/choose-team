@@ -1,0 +1,20 @@
+<div fxLayout="column">
+  <form (ngSubmit)="save()" [formGroup]="playerForm">
+    <div fxLayout fxLayoutGap="10px">
+      <mat-form-field fxFlex="70">
+        <input matInput autocomplete="off" #NamePlayer="matInput" type="text" oninput="this.value = this.value.toUpperCase()" formControlName="name"
+          placeholder="NOME">
+      </mat-form-field>
+      <mat-form-field fxFlex="30">
+        <mat-select formControlName="position" name="position" placeholder="POSIÇÃO">
+          <mat-option *ngFor="let position of posicoes" [value]="position.value">
+            {{position.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column">
+      <button mat-raised-button color="primary" type="submit">ADICIONAR</button>
+    </div>
+  </form>
+</div>

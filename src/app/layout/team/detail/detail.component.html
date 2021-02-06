@@ -3,19 +3,19 @@
 <br>
 
 <div fxLayout="row">
-  <div class="title-boleiro" fxFlex>
-    SELECIONE OS BOLEIROS ({{boleiroService.getActive().length}})
+  <div class="title-player" fxFlex>
+    SELECIONE OS BOLEIROS ({{playerService.getActive().length}})
   </div>
 </div>
 
-<div fxLayout="row" class="list-boleiro" *ngFor=" let item of boleiroService.boleiros; let i = index">
+<div fxLayout="row" class="list-player" *ngFor=" let item of playerService.players; let i = index">
   <div fxFlex="60">
-    {{item.nome}}
+    {{item.name}}
   </div>
   <div fxFlex="25">
-    {{item.posicao}}
+    {{item.position}}
   </div>
   <div fxFlex="15">
-    <mat-slide-toggle color="primary" [checked]="item.ativo" (change)="boleiroService.setActive(item)"></mat-slide-toggle>
+    <mat-slide-toggle color="primary" [checked]="item.selected" (change)="playerService.setActive(item)"></mat-slide-toggle>
   </div>
 </div>

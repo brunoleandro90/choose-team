@@ -1,0 +1,22 @@
+<div fxLayout="column" fxLayoutAlign="center center" *ngIf="playerService.players.length == 0">
+  NENHUM BOLEIRO CADASTRADO!
+</div>
+
+<div *ngIf="playerService.players.length > 0">
+  <div fxLayout="column" class="title-player">
+    BOLEIROS ({{playerService.players.length}})
+  </div>
+  <div fxLayout="row" class="list-player" *ngFor=" let item of playerService.players; let i = index">
+    <div fxFlex="60">
+      {{item.name}}
+    </div>
+    <div fxFlex="25">
+      {{item.position}}
+    </div>
+    <div fxFlex="15">
+      <button mat-icon-button color="warn" (click)="delete(item.id)" matTooltip="EXCLUIR" matTooltipPosition="left">
+        <img src="/assets/close.svg" width="24px">
+      </button>
+    </div>
+  </div>
+</div>

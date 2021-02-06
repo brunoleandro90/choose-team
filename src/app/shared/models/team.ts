@@ -1,7 +1,7 @@
-import { Boleiro } from "./boleiro";
+import { Player } from "./player";
 
 export interface Team {
-  partidaId: string;
-  time: number;
-  boleiros: Boleiro[];
+  matchId: string;
+  team: number;
+  players: Player[];
 }

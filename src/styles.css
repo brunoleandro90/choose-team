@@ -29,7 +29,7 @@ body {
   right: 20px;
 }
 
-.card-partida {
+.card-match {
   margin: 0 0 20px 0;
 }
 
@@ -60,24 +60,24 @@ body {
   stroke: #3fb53f;
 } */
 
-.title-boleiro {
+.title-player {
   font-size: 17px;
   font-weight: 400;
   margin-bottom: 10px;
 }
 
-.list-boleiro {
+.list-player {
   border-top: 0.2px solid rgba(0, 0, 0, .3);
   height: 40px;
 }
 
 
-.list-boleiro div {
+.list-player div {
   display: grid;
   align-items: center;
 }
 
-.list-boleiro div:last-child {
+.list-player div:last-child {
   justify-content: center;
 }
 

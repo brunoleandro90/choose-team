@@ -1,23 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListComponent } from './list/list.component';
-import { CreateComponent } from './create/create.component';
-import { PartidaRoutingModule } from './partida-routing.module';
 import { MaterialModule } from 'src/app/shared/modules/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PlayerRoutingModule } from './player-routing.module';
+import { CreateComponent } from './create/create.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     ListComponent,
-    CreateComponent
+    CreateComponent,
+    DetailComponent
   ],
   imports: [
     CommonModule,
-    PartidaRoutingModule,
+    PlayerRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
     FlexLayoutModule.withConfig({ addFlexToParent: false })
   ]
 })
-export class PartidaModule { }
+export class PlayerModule { }

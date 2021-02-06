@@ -1,9 +1,9 @@
 <mat-dialog-content class="mat-typography">
   <div *ngFor="let team of data">
-    <h2 style="margin: 0; padding-top: 10px; border-bottom: 1px solid rgb(0 0 0 / 22%)">TIME {{team.time}}:</h2>
+    <h2 style="margin: 0; padding-top: 10px; border-bottom: 1px solid rgb(0 0 0 / 22%)">TIME {{team.team}}:</h2>
     <mat-list style="margin-bottom:10px;">
-      <mat-list-item style="height: 30px;" *ngFor="let boleiro of team.boleiros, let i = index">
-        {{i+1}}. {{boleiro.nome}}
+      <mat-list-item style="height: 30px;" *ngFor="let player of team.players, let i = index">
+        {{i+1}}. {{player.name}}
       </mat-list-item>
     </mat-list>
   </div>

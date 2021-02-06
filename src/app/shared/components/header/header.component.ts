@@ -18,9 +18,9 @@ export class HeaderComponent {
   ) { }
 
   get title() {
-    if (this.router.url.toLowerCase().startsWith('/partida'))
-      return 'MINHAS PELADAS';
-    else if (this.router.url.toLowerCase().startsWith('/boleiro'))
+    if (this.router.url.toLowerCase().startsWith('/match'))
+      return 'MINHAS PARTIDAS';
+    else if (this.router.url.toLowerCase().startsWith('/player'))
       return 'BOLEIROS';
     else if (this.router.url.toLowerCase().startsWith('/team'))
       return 'TIRAR TIME';
@@ -37,6 +37,6 @@ export class HeaderComponent {
   }
 
   showBack() {
-    return (this.router.url != "/") && (this.router.url != "/partida");
+    return (this.router.url != "/") && (this.router.url != "/match");
   }
 }
